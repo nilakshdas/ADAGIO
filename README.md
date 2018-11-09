@@ -19,3 +19,5 @@ To start the interactive server, type the following command:
 ```
 docker-compose up
 ```
+
+You can now access the ADAGIO interface at http://localhost:3000
