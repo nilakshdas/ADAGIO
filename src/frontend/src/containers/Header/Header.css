@@ -1,0 +1,17 @@
+.header > .navbar-brand {
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+.btn-add-audio-card {
+    margin: 0px;
+    color: white;
+    font-size: 2.5rem;
+    line-height: normal;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.btn-add-audio-card:hover {
+    opacity: 1.0;
+}

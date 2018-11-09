@@ -1,0 +1,69 @@
+version: '3'
+
+services:
+    redis-service:
+        image: redis:latest
+        ports:
+            - 6379:6379
+
+    rabbitmq-service:
+        build: ./src/rabbitmq
+        ports:
+            - 5672:5672
+            - 15672:15672
+
+    fileserver-service:
+        build: ./src/fileserver
+        volumes:
+            - ./volumes/fileserver/uploaded:/data/uploaded
+            - ./volumes/fileserver/preprocessed:/data/preprocessed
+        ports:
+            - 8080:8080
+
+    ffmpeg-service:
+        build: ./src/ffmpeg
+        volumes:
+            - ./volumes/fileserver/uploaded:/data/uploaded
+            - ./volumes/fileserver/preprocessed:/data/preprocessed
+        depends_on:
+            - redis-service
+            - rabbitmq-service
+
+    deepspeech-service:
+        build: ./src/deepspeech
+        volumes:
+            - ./volumes/fileserver/uploaded:/data/uploaded
+            - ./volumes/fileserver/preprocessed:/data/preprocessed
+        depends_on:
+            - redis-service
+            - rabbitmq-service
+
+    attack-service:
+        build: ./src/attack
+        volumes:
+            - ./volumes/fileserver/uploaded:/data/uploaded
+            - ./volumes/fileserver/preprocessed:/data/preprocessed
+        depends_on:
+            - redis-service
+            - rabbitmq-service
+
+    websocket-service:
+        build: ./src/websocket
+        volumes:
+            - ./volumes/fileserver/uploaded:/data/uploaded
+            - ./volumes/fileserver/preprocessed:/data/preprocessed
+        ports:
+            - 8888:8888
+        depends_on:
+            - redis-service
+            - rabbitmq-service
+            - ffmpeg-service
+            - deepspeech-service
+
+    frontend-service:
+        build: ./src/frontend
+        ports:
+            - 3000:3000
+        depends_on:
+            - fileserver-service
+            - websocket-service

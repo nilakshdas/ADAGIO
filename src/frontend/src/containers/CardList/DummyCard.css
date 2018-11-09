@@ -1,0 +1,15 @@
+.dummy-card {
+    height: 250px;
+    cursor: pointer;
+}
+
+.dummy-card > .btn-add-audio-card {
+    margin: auto;
+    color: black;
+    font-size: 5rem;
+    opacity: 0.2;
+}
+
+.dummy-card:hover > .btn-add-audio-card {
+    opacity: 0.5;
+}

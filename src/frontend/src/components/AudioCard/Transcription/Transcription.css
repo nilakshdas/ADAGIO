@@ -1,0 +1,24 @@
+.transcription {
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+.transcription.original {
+    color: #545b62;
+}
+
+.transcription.amr {
+    color: #1e7e34;
+}
+
+.transcription.mp3 {
+    color: #0062cc;
+}
+
+.transcription.attacked {
+    color: #bd2130;
+}
+
+.transcription .fa-spinner {
+    color: #666;
+}

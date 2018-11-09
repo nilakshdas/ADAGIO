@@ -1,0 +1,54 @@
+.card {
+    margin: 1.2rem;
+    flex: 1 0 600px;
+    box-sizing: border-box;
+    max-width: 600px;
+    min-width: 600px;
+    border-width: 0px;
+    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-footer {
+    /* display: none; */
+    vertical-align: middle;
+    line-height: -moz-block-height;
+}
+
+.card:hover > .card-body-container > .card-footer {
+    display: block;
+}
+
+.audio-file-name {
+    color: #c6c6c6 !important;
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 90%;
+    font-weight: lighter;
+}
+
+.btn-close-audio-card {
+    margin: 0 3px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    opacity: 0.15;
+    z-index: 999;
+}
+
+.btn-close-audio-card:hover {
+    color: red;
+    opacity: 0.6;
+}

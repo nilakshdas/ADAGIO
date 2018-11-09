@@ -1,0 +1,21 @@
+.audio-control-panel {
+    margin: 0;
+    padding: 0 25px;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    z-index: 10;
+    transition: 0.2s;
+}
+
+.panel-btn {
+    margin-top: 0px;
+    opacity: 0.0;
+    transition: 0.1s;
+}
+
+.audio-control-panel:hover > .panel-btn,
+        .waveform:hover + .audio-control-panel > .panel-btn {
+    margin-top: 18px;
+    opacity: 1.0;
+}

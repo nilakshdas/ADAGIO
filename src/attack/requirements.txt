@@ -1,0 +1,10 @@
+celery
+deepspeech==0.1.1
+numpy
+pandas
+python_speech_features
+redis
+scipy
+tensorflow==1.8.0
+pydub
+pyxdg

@@ -1,0 +1,6 @@
+celery
+docker
+numpy
+redis
+scipy
+git+https://github.com/dpallot/simple-websocket-server.git
